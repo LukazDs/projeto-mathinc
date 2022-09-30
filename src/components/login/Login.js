@@ -31,7 +31,7 @@ function Login() {
         />
         <button>Login</button>
       </loginStyle.Forms>
-      <Link to={"/register"}>Not registered? register now.</Link>
+      <Link to={"/register"}>Not registered? Register now.</Link>
     </loginStyle.Container>
   );
 }

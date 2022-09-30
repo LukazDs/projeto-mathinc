@@ -70,7 +70,7 @@ const InfoLogo = styled.div`
 
 const Forms = styled.form`
   width: 312px;
-  height: 220px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +114,7 @@ const Forms = styled.form`
   }
 `;
 
-export const loginStyle = {
+export const registerStyle = {
   Container,
   InfoLogo,
   Forms,
