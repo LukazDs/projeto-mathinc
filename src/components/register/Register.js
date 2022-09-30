@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerStyle } from "./registerStyle";
@@ -11,7 +12,7 @@ function Register() {
 
   const navigate = useNavigate();
 
-  function registerUser(event) {
+  async function registerUser(event) {
     event.preventDefault();
 
     if (password !== confirmedPassword) {
@@ -19,7 +20,10 @@ function Register() {
       return;
     }
 
-    navigate("/");
+    const URL = `${process.env.REACT_APP_API_BASE_URL}/user/register`;
+    const body = { name, email, password, confirmedPassword, imageUrl };
+
+    const promise = axios.post(URL, body, {});
   }
 
   return (
