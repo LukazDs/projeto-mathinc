@@ -14,6 +14,11 @@ function Register() {
   function registerUser(event) {
     event.preventDefault();
 
+    if (password !== confirmedPassword) {
+      alert("Senha e confirmar senha são diferentes!");
+      return;
+    }
+
     navigate("/");
   }
 
