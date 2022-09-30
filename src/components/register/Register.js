@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerStyle } from "./registerStyle";
 
 function Register() {
@@ -9,6 +9,14 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
 
+  const navigate = useNavigate();
+
+  function registerUser(event) {
+    event.preventDefault();
+
+    navigate("/");
+  }
+
   return (
     <registerStyle.Container>
       <registerStyle.InfoLogo>
@@ -16,7 +24,7 @@ function Register() {
           <span>M</span>
         </div>
       </registerStyle.InfoLogo>
-      <registerStyle.Forms>
+      <registerStyle.Forms onSubmit={registerUser}>
         <input
           type="name"
           onChange={(e) => setName(e.target.value)}
