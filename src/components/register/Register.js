@@ -24,6 +24,15 @@ function Register() {
     const body = { name, email, password, confirmedPassword, imageUrl };
 
     const promise = axios.post(URL, body, {});
+
+    promise
+      .then((_res) => {
+        navigate("/");
+      })
+
+      .catch((err) => {
+        alert(err.response.data);
+      });
   }
 
   return (
