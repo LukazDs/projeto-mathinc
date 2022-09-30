@@ -3,6 +3,7 @@ import { useState } from "react";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import UserContext from "./contexts/UserContext";
+import Timeline from "./components/timeline/Timeline";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/posts" element={<Timeline />} />
         </Routes>
       </Router>
     </UserContext.Provider>

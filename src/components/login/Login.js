@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../assets/loaders/Loading";
+import UserContext from "../../contexts/UserContext";
 import { loginStyle } from "./loginStyle";
 
 function Login() {
@@ -10,6 +11,8 @@ function Login() {
 
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  const { setToken } = useContext(UserContext);
 
   async function loginUser(event) {
     event.preventDefault();
@@ -22,8 +25,9 @@ function Login() {
     const promise = axios.post(URL, body, {});
 
     promise
-      .then((_res) => {
+      .then((res) => {
         setIsLoading(false);
+        setToken(res.data.token);
         navigate("/posts");
       })
 
