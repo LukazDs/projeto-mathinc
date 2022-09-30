@@ -78,7 +78,7 @@ function Register() {
           placeholder="Confirm Password"
           required
         />
-        <button>Login</button>
+        <button>Register</button>
       </registerStyle.Forms>
       <Link to={"/"}>Already registered? Log now.</Link>
     </registerStyle.Container>
