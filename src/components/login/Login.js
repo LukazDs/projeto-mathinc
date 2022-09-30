@@ -12,7 +12,7 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { setToken } = useContext(UserContext);
+  const { token, setToken } = useContext(UserContext);
 
   async function loginUser(event) {
     event.preventDefault();
@@ -27,7 +27,8 @@ function Login() {
     promise
       .then((res) => {
         setIsLoading(false);
-        setToken(res.data.token);
+        setToken(res.data);
+        localStorage.setItem("token", token);
         navigate("/posts");
       })
 
