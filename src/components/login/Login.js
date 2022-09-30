@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, navigate } from "react-router-dom";
 import { loginStyle } from "./loginStyle";
 
 function Login() {
@@ -10,10 +10,20 @@ function Login() {
   async function loginUser(event) {
     event.preventDefault();
 
-    const URL = `${process.env.REACT_APP_API_BASE_URL}/user/register`;
+    const URL = `${process.env.REACT_APP_API_BASE_URL}/user/login`;
     const body = { email, password };
 
     const promise = axios.post(URL, body, {});
+
+    promise
+      .then((res) => {
+        navigate("/posts");
+      })
+
+      .catch((err) => {
+        setIsLoading(false);
+        alert(err.response.statusText);
+      });
   }
 
   return (
