@@ -55,6 +55,7 @@ function Register() {
           onChange={(e) => setName(e.target.value)}
           value={name}
           placeholder="Name"
+          disabled={isLoading}
           required
         />
         <input
@@ -62,6 +63,7 @@ function Register() {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           placeholder="Email"
+          disabled={isLoading}
           required
         />
         <input
@@ -69,6 +71,7 @@ function Register() {
           onChange={(e) => setImageUrl(e.target.value)}
           value={imageUrl}
           placeholder="Image URL"
+          disabled={isLoading}
           required
         />
         <input
@@ -76,6 +79,7 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           placeholder="Password"
+          disabled={isLoading}
           required
         />
         <input
@@ -83,6 +87,7 @@ function Register() {
           onChange={(e) => setConfirmedPassword(e.target.value)}
           value={confirmedPassword}
           placeholder="Confirm Password"
+          disabled={isLoading}
           required
         />
         <button disabled={isLoading}>
