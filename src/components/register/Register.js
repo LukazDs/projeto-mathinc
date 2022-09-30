@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Loading from "../../assets/loaders/Loading";
 import { registerStyle } from "./registerStyle";
 
 function Register() {
@@ -11,11 +12,15 @@ function Register() {
   const [confirmedPassword, setConfirmedPassword] = useState("");
 
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function registerUser(event) {
     event.preventDefault();
 
+    setIsLoading(true);
+
     if (password !== confirmedPassword) {
+      setIsLoading(false);
       alert("Senha e confirmar senha são diferentes!");
       return;
     }
@@ -27,10 +32,12 @@ function Register() {
 
     promise
       .then((_res) => {
+        setIsLoading(false);
         navigate("/");
       })
 
       .catch((err) => {
+        setIsLoading(false);
         alert(err.response.data);
       });
   }
@@ -78,7 +85,9 @@ function Register() {
           placeholder="Confirm Password"
           required
         />
-        <button>Register</button>
+        <button disabled={isLoading}>
+          {isLoading ? <Loading /> : "Register"}
+        </button>
       </registerStyle.Forms>
       <Link to={"/"}>Already registered? Log now.</Link>
     </registerStyle.Container>

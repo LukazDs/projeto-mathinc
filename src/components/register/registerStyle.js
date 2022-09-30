@@ -90,12 +90,13 @@ const Forms = styled.form`
     color: black;
   }
   button {
-    margin-top: 20px;
-    width: 316px;
-    height: 58px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    width: 316px;
+    height: 58px;
+
     cursor: pointer;
     background: #353434;
     border: 4px solid #464646;
