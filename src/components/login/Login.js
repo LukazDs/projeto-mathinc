@@ -7,8 +7,12 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   async function loginUser(event) {
     event.preventDefault();
+
+    setIsLoading(true);
 
     const URL = `${process.env.REACT_APP_API_BASE_URL}/user/login`;
     const body = { email, password };
@@ -17,12 +21,13 @@ function Login() {
 
     promise
       .then((res) => {
+        setIsLoading(false);
         navigate("/posts");
       })
 
       .catch((err) => {
         setIsLoading(false);
-        alert(err.response.statusText);
+        alert(err.response.data);
       });
   }
 
