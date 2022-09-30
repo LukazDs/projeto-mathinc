@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, navigate } from "react-router-dom";
+import Loading from "../../assets/loaders/Loading";
 import { loginStyle } from "./loginStyle";
 
 function Login() {
@@ -45,6 +46,7 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           placeholder="Email"
+          disabled={isLoading}
           required
         />
         <input
@@ -52,9 +54,12 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           placeholder="Password"
+          disabled={isLoading}
           required
         />
-        <button>Login</button>
+        <button disabled={isLoading}>
+          {isLoading ? <Loading /> : "Login"}
+        </button>
       </loginStyle.Forms>
       <Link to={"/register"}>Not registered? Register now.</Link>
     </loginStyle.Container>
