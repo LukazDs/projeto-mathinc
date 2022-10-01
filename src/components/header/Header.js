@@ -1,15 +1,30 @@
-import { FaChevronDown } from "react-icons/fa";
+import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
 
 function Hearder() {
+  const [clicked, setClicked] = useState(false);
+
   function makeIcon() {
-    return <FaChevronDown />;
+    return clicked ? (
+      <FaChevronUp
+        onClick={() => {
+          setClicked(false);
+        }}
+      />
+    ) : (
+      <FaChevronDown
+        onClick={() => {
+          setClicked(true);
+        }}
+      />
+    );
   }
   return (
     <headerStyle.HeaderBox>
       <span
         onClick={() => {
-          console.log("CLICKED");
+          setClicked(!clicked);
         }}
       >
         MathInc
