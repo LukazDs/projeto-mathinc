@@ -41,7 +41,7 @@ const ProfileHeader = styled.div`
     height: 53px;
     object-fit: cover;
     text-align: center;
-
+    cursor: pointer;
     background: white;
     border-radius: 26.5px;
   }
