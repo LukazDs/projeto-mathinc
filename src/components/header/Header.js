@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
+import image from "../../assets/images/images.jpeg";
 
 function Hearder() {
   const [clicked, setClicked] = useState(false);
@@ -31,6 +32,13 @@ function Hearder() {
       </span>
       <headerStyle.ProfileHeader>
         <div className="icon">{makeIcon()}</div>
+        <img
+          src={image}
+          alt="perfil"
+          onClick={() => {
+            setClicked(!clicked);
+          }}
+        />
       </headerStyle.ProfileHeader>
     </headerStyle.HeaderBox>
   );
