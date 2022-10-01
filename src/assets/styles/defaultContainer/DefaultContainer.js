@@ -8,6 +8,7 @@ const DefaultContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   background: #f6f6f6;
+  position: relative;
   a {
     font-family: "Roboto";
     font-style: normal;

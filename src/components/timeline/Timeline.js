@@ -1,8 +1,12 @@
+import DefaultContainer from "../../assets/styles/defaultContainer/DefaultContainer";
+
 function Timeline() {
   return (
-    <div className="logo">
-      <span>M</span>
-    </div>
+    <DefaultContainer>
+      <div className="logo">
+        <span>ENTREI NA Timeline</span>
+      </div>
+    </DefaultContainer>
   );
 }
 
