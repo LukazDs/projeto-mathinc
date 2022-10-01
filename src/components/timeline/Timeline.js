@@ -1,12 +1,14 @@
-import DefaultContainer from "../../assets/styles/defaultContainer/DefaultContainer";
+import Hearder from "../header/Header";
+import { Container } from "./timelineStyle";
 
 function Timeline() {
   return (
-    <DefaultContainer>
+    <Container>
+      <Hearder />
       <div className="logo">
         <span>ENTREI NA Timeline</span>
       </div>
-    </DefaultContainer>
+    </Container>
   );
 }
 
