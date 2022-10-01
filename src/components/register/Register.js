@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../assets/loaders/Loading";
 import { registerStyle } from "./registerStyle";
+import DefaultContainer from "../../assets/styles/defaultContainer/DefaultContainer";
 
 function Register() {
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ function Register() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  async function registerUser(event) {
+  function registerUser(event) {
     event.preventDefault();
 
     setIsLoading(true);
@@ -43,7 +44,7 @@ function Register() {
   }
 
   return (
-    <registerStyle.Container>
+    <DefaultContainer>
       <registerStyle.InfoLogo>
         <div className="logo">
           <span>M</span>
@@ -95,7 +96,7 @@ function Register() {
         </button>
       </registerStyle.Forms>
       <Link to={"/"}>Already registered? Log now.</Link>
-    </registerStyle.Container>
+    </DefaultContainer>
   );
 }
 

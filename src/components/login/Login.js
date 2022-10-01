@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../assets/loaders/Loading";
+import DefaultContainer from "../../assets/styles/defaultContainer/DefaultContainer";
 import UserContext from "../../contexts/UserContext";
 import { loginStyle } from "./loginStyle";
 
@@ -12,9 +13,9 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { token, setToken } = useContext(UserContext);
+  const { setToken } = useContext(UserContext);
 
-  async function loginUser(event) {
+  function loginUser(event) {
     event.preventDefault();
 
     setIsLoading(true);
@@ -27,8 +28,8 @@ function Login() {
     promise
       .then((res) => {
         setIsLoading(false);
-        setToken(res.data);
-        localStorage.setItem("token", token);
+        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
         navigate("/posts");
       })
 
@@ -39,7 +40,7 @@ function Login() {
   }
 
   return (
-    <loginStyle.Container>
+    <DefaultContainer>
       <loginStyle.InfoLogo>
         <div className="logo">
           <span>M</span>
@@ -68,7 +69,7 @@ function Login() {
         </button>
       </loginStyle.Forms>
       <Link to={"/register"}>Not registered? Register now.</Link>
-    </loginStyle.Container>
+    </DefaultContainer>
   );
 }
 
