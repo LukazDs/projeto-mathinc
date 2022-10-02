@@ -8,6 +8,7 @@ const HeaderBox = styled.menu`
   justify-content: space-between;
   background: #222222;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   span {

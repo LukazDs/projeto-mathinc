@@ -1,13 +1,15 @@
 import Hearder from "../header/Header";
-import { Container } from "./timelineStyle";
+import Post from "../post/Post";
+import { Container, PostsContainer } from "./timelineStyle";
 
 function Timeline() {
   return (
     <Container>
       <Hearder />
-      <div className="logo">
-        <span>ENTREI NA Timeline</span>
-      </div>
+      <PostsContainer>
+        <Post />
+        <Post />
+      </PostsContainer>
     </Container>
   );
 }
