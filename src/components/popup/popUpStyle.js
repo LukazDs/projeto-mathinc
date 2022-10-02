@@ -17,7 +17,7 @@ export const PopUpMenuBox = styled.div`
     height: 20px;
     left: 1344px;
     top: 81px;
-    font-family: "Lato";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 17px;

@@ -12,7 +12,7 @@ const HeaderBox = styled.menu`
   left: 0;
   span {
     margin-left: 3%;
-    font-family: "Passion One";
+    font-family: "Bungee";
     font-style: normal;
     font-weight: 700;
     font-size: 28px;

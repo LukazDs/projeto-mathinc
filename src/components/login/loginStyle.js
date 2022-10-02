@@ -63,7 +63,7 @@ const Forms = styled.form`
     background: rgba(217, 217, 217, 0.5);
     border: 3px solid #000000;
     border-radius: 16px;
-    font-family: "Raleway";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

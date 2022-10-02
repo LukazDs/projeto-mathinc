@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
 import image from "../../assets/images/images.jpeg";
-import { PopUpHeader } from "./popup/PopUp";
+import { PopUpHeader } from "../popup/PopUp";
 
 function Hearder() {
   const [clicked, setClicked] = useState(false);
