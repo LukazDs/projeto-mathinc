@@ -23,14 +23,13 @@ function Login() {
     const URL = `${process.env.REACT_APP_API_BASE_URL}/user/login`;
     const body = { email, password };
 
-    const promise = axios.post(URL, body, {
-      headers: { Authorization: "sdasfdawewewewaf" },
-    });
+    const promise = axios.post(URL, body, {});
 
     console.log(promise);
     promise
       .then((res) => {
         setIsLoading(false);
+        console.log(res.data.userDb);
         setToken(res.data.token);
         localStorage.setItem("token", res.data.token);
         navigate("/posts");

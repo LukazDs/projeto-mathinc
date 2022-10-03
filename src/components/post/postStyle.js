@@ -3,17 +3,14 @@ import styled from "styled-components";
 const PostBox = styled.div`
   position: relative;
   z-index: 0;
-  width: 90%;
-  height: 400px;
+  width: 80%;
+  height: 450px;
   background: gray;
-  margin-top: 100px;
+  margin-top: 90px;
   border-radius: 10px 10px 0px 0px;
 `;
 
 const TopPost = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 14%;
   display: flex;
@@ -43,4 +40,11 @@ const ProfileTopPost = styled.div`
   }
 `;
 
-export { PostBox, TopPost, ProfileTopPost };
+const PostContent = styled.img`
+  width: 100%;
+  height: 76%;
+  background: #ffffff;
+  object-fit: cover;
+`;
+
+export { PostBox, TopPost, ProfileTopPost, PostContent };
