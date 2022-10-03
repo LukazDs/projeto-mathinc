@@ -23,8 +23,11 @@ function Login() {
     const URL = `${process.env.REACT_APP_API_BASE_URL}/user/login`;
     const body = { email, password };
 
-    const promise = axios.post(URL, body, {});
+    const promise = axios.post(URL, body, {
+      headers: { Authorization: "sdasfdawewewewaf" },
+    });
 
+    console.log(promise);
     promise
       .then((res) => {
         setIsLoading(false);
