@@ -25,7 +25,6 @@ function Login() {
 
     const promise = axios.post(URL, body, {});
 
-    console.log(promise);
     promise
       .then((res) => {
         setIsLoading(false);
