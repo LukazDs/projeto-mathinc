@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
-import image from "../../assets/images/images.jpeg";
 import { PopUpHeader } from "../popup/PopUp";
 
 function Hearder() {
   const [clicked, setClicked] = useState(false);
+
+  const imageProfile = localStorage.getItem("profileUrl");
+
+  useEffect(() => {
+    console.log("carregar posts!");
+  });
 
   function makeIcon() {
     return clicked ? (
@@ -34,7 +39,7 @@ function Hearder() {
       <headerStyle.ProfileHeader>
         <div className="icon">{makeIcon()}</div>
         <img
-          src={image}
+          src={imageProfile}
           alt="perfil"
           onClick={() => {
             setClicked(!clicked);

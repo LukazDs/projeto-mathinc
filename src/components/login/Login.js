@@ -29,9 +29,9 @@ function Login() {
     promise
       .then((res) => {
         setIsLoading(false);
-        console.log(res.data.userDb);
         setToken(res.data.token);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("profileUrl", res.data.imageUrl);
         navigate("/posts");
       })
 
