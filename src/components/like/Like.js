@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import styled from "styled-components";
 
 function Like() {
+  const [clicked, setClicked] = useState(false);
+
   function makeLike() {
-    return <AiFillHeart></AiFillHeart>;
+    return clicked ? (
+      <AiFillHeart
+        onClick={() => {
+          setClicked(!clicked);
+        }}
+      />
+    ) : (
+      <AiOutlineHeart
+        onClick={() => {
+          setClicked(!clicked);
+        }}
+      />
+    );
   }
 
   return makeLike();
