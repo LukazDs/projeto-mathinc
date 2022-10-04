@@ -5,8 +5,7 @@ const PostBox = styled.div`
   z-index: 0;
   width: 80%;
   height: 450px;
-  background: gray;
-  margin-top: 90px;
+  margin-bottom: 70px;
   border-radius: 10px 10px 0px 0px;
 `;
 
@@ -42,9 +41,16 @@ const ProfileTopPost = styled.div`
 
 const PostContent = styled.img`
   width: 100%;
-  height: 76%;
+  height: 74%;
   background: #ffffff;
   object-fit: cover;
 `;
 
-export { PostBox, TopPost, ProfileTopPost, PostContent };
+const BottomPost = styled.div`
+  width: 100%;
+  height: 12%;
+  background: #1c0101;
+  border-radius: 0px 0px 10px 10px;
+`;
+
+export { PostBox, TopPost, ProfileTopPost, PostContent, BottomPost };

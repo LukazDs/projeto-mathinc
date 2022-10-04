@@ -15,8 +15,10 @@ const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 90px;
 `;
 
 export { Container, PostsContainer };
