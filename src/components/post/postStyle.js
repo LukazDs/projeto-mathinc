@@ -51,6 +51,16 @@ const BottomPost = styled.div`
   height: 12%;
   background: #1c0101;
   border-radius: 0px 0px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    margin: 0px 18px;
+    text-align: center;
+    font-size: 28px;
+    color: red;
+  }
 `;
 
 export { PostBox, TopPost, ProfileTopPost, PostContent, BottomPost };
