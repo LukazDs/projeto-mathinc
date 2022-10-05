@@ -3,19 +3,19 @@ import styled from "styled-components";
 const PostBox = styled.div`
   position: relative;
   z-index: 0;
-  width: 80%;
-  height: 450px;
-  margin-bottom: 70px;
+  width: 100%;
+  height: 480px;
+  margin-bottom: 120px;
+  backgroung: green;
   border-radius: 10px 10px 0px 0px;
 `;
 
 const TopPost = styled.div`
   width: 100%;
-  height: 14%;
+  height: 28%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   border-radius: 10px 10px 0px 0px;
-
   background: #1c0101;
 `;
 
@@ -39,16 +39,30 @@ const ProfileTopPost = styled.div`
   }
 `;
 
+const PostDescription = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1c0101;
+  span {
+    font-family: "Silkscreen", cursive;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+  }
+`;
 const PostContent = styled.img`
   width: 100%;
-  height: 74%;
+  height: 80%;
   background: #ffffff;
-  object-fit: cover;
 `;
 
 const BottomPost = styled.div`
   width: 100%;
-  height: 12%;
+  height: 13%;
   background: #1c0101;
   border-radius: 0px 0px 10px 10px;
   display: flex;
@@ -63,4 +77,11 @@ const BottomPost = styled.div`
   }
 `;
 
-export { PostBox, TopPost, ProfileTopPost, PostContent, BottomPost };
+export {
+  PostBox,
+  TopPost,
+  PostDescription,
+  ProfileTopPost,
+  PostContent,
+  BottomPost,
+};

@@ -17,7 +17,7 @@ function Timeline() {
 
   function makePosts() {
     return posts.map((v, i) => {
-      return <Post key={i} name={v.title} imageUrl={v.imageUrl} />;
+      return <Post key={i} title={v.title} imageUrl={v.imageUrl} />;
     });
   }
 

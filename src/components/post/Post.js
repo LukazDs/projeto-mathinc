@@ -3,11 +3,12 @@ import {
   BottomPost,
   PostBox,
   PostContent,
+  PostDescription,
   ProfileTopPost,
   TopPost,
 } from "./postStyle";
 
-function Post({ name, imageUrl }) {
+function Post({ title, imageUrl }) {
   const imageProfile = localStorage.getItem("profileUrl");
 
   return (
@@ -15,9 +16,13 @@ function Post({ name, imageUrl }) {
       <TopPost>
         <ProfileTopPost>
           <img src={imageProfile} alt="perfil" />
-          <span>{name}</span>
+          <span>Perfil</span>
         </ProfileTopPost>
+        <PostDescription>
+          <span>{title}</span>
+        </PostDescription>
       </TopPost>
+
       <PostContent src={imageUrl} alt="post"></PostContent>
       <BottomPost>
         <Like />
