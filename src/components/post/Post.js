@@ -11,7 +11,7 @@ import {
   TopPost,
 } from "./postStyle";
 
-function Post({ title, imageUrl, userId, postId }) {
+function Post({ title, imageUrl, userId, postId, isLiked }) {
   const [imageTopPost, setImageTopPost] = useState("");
   const [nameProfileTop, setNameProfileTop] = useState("");
 
@@ -40,7 +40,7 @@ function Post({ title, imageUrl, userId, postId }) {
 
       <PostContent src={imageUrl} alt="post"></PostContent>
       <BottomPost>
-        <Like userId={userId} postId={postId} />
+        <Like userId={userId} postId={postId} isLiked={isLiked} />
       </BottomPost>
     </PostBox>
   );

@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import UserContext from "../../contexts/UserContext";
 
-function Like({ userId, postId }) {
-  const [clicked, setClicked] = useState(false);
+function Like({ userId, postId, isLiked }) {
+  const [clicked, setClicked] = useState(isLiked);
+  console.log(isLiked);
   const { token } = useContext(UserContext);
   const id = localStorage.getItem("id");
 

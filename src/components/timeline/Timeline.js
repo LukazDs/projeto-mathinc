@@ -8,15 +8,28 @@ import { Container, PostsContainer } from "./timelineStyle";
 
 function Timeline() {
   const [posts, setPosts] = useState([]);
+  const [likes, setLikes] = useState([]);
   const navigate = useNavigate();
   const { token } = useState(UserContext);
   const id = localStorage.getItem("id");
 
   const tokenDefault = token ? token : localStorage.getItem("token");
+  const config = { headers: { Authorization: `${tokenDefault}` } };
 
+  // get user likes
   useEffect(() => {
-    const config = { headers: { Authorization: `${tokenDefault}` } };
+    const promise = axios.get(
+      `${process.env.REACT_APP_API_BASE_URL}/likes/user/${id}`,
+      config
+    );
 
+    promise.then((res) => {
+      setLikes(res.data);
+    });
+  }, []);
+
+  //get posts
+  useEffect(() => {
     if (!tokenDefault) navigate("/");
 
     const promise = axios.get(
@@ -38,15 +51,15 @@ function Timeline() {
   }, []);
 
   function makePosts() {
-    return posts.map((v, i) => {
+    return posts.map((post, i) => {
       return (
         <Post
           key={i}
-          userId={v.userId}
-          isClicked={v.userId === id}
-          postId={v.id}
-          title={v.title}
-          imageUrl={v.imageUrl}
+          userId={post.userId}
+          postId={post.id}
+          title={post.title}
+          imageUrl={post.imageUrl}
+          isLiked={likes.some((v) => v.postId === post.id)}
         />
       );
     });
