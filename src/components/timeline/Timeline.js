@@ -10,6 +10,7 @@ function Timeline() {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
   const { token } = useState(UserContext);
+  const id = localStorage.getItem("id");
 
   const tokenDefault = token ? token : localStorage.getItem("token");
 
@@ -39,7 +40,14 @@ function Timeline() {
   function makePosts() {
     return posts.map((v, i) => {
       return (
-        <Post key={i} userId={v.userId} title={v.title} imageUrl={v.imageUrl} />
+        <Post
+          key={i}
+          userId={v.userId}
+          isClicked={v.userId === id}
+          postId={v.id}
+          title={v.title}
+          imageUrl={v.imageUrl}
+        />
       );
     });
   }

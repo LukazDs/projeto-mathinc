@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
 import { PopUpHeader } from "../popup/PopUp";
