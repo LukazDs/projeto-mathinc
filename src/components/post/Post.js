@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Like } from "../like/Like";
+
 import {
   BottomPost,
   PostBox,
@@ -8,15 +11,27 @@ import {
   TopPost,
 } from "./postStyle";
 
-function Post({ title, imageUrl }) {
-  const imageProfile = localStorage.getItem("profileUrl");
+function Post({ title, imageUrl, userId }) {
+  const [imageTopPost, setImageTopPost] = useState("");
+  const [nameProfileTop, setNameProfileTop] = useState("");
+
+  useEffect(() => {
+    const promise = axios.get(
+      `${process.env.REACT_APP_API_BASE_URL}/user/${userId}`
+    );
+
+    promise.then((res) => {
+      setImageTopPost(res.data.imageUrl);
+      setNameProfileTop(res.data.name);
+    });
+  }, []);
 
   return (
     <PostBox>
       <TopPost>
         <ProfileTopPost>
-          <img src={imageProfile} alt="perfil" />
-          <span>Perfil</span>
+          <img src={imageTopPost} alt="perfil" />
+          <span>{nameProfileTop}</span>
         </ProfileTopPost>
         <PostDescription>
           <span>{title}</span>
