@@ -33,10 +33,10 @@ function Post({ title, imageUrl, userId }) {
           <img src={imageTopPost} alt="perfil" />
           <span>{nameProfileTop}</span>
         </ProfileTopPost>
-        <PostDescription>
-          <span>{title}</span>
-        </PostDescription>
       </TopPost>
+      <PostDescription>
+        <span>{title}</span>
+      </PostDescription>
 
       <PostContent src={imageUrl} alt="post"></PostContent>
       <BottomPost>

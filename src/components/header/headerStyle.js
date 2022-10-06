@@ -6,7 +6,8 @@ const HeaderBox = styled.menu`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #222222;
+  border-radius: 0px 24px;
+  background: #221221;
   position: fixed;
   z-index: 1;
   top: 0;
