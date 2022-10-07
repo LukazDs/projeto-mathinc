@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 const PostBox = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 0;
   width: 44%;
-  height: 520px;
-  margin-bottom: 140px;
-  backgroung: green;
+  height: 620px;
+  margin-bottom: 10px;
   border-radius: 10px 10px 0px 0px;
   @media (max-width: 768px) {
     width: 100%;
@@ -15,12 +17,12 @@ const PostBox = styled.div`
 
 const TopPost = styled.div`
   width: 90%;
-  height: 70px;
+  height: 54px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px 10px 0px 0px;
-  background: #1c0101;
+  background: #34252f;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -36,31 +38,31 @@ const ProfileTopPost = styled.div`
     text-align: center;
     background: white;
     border-radius: 20px;
-    margin: 10px;
+    margin: 0px 10px;
   }
   span {
     font-family: "Silkscreen", cursive;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
     color: white;
   }
 `;
 
 const PostDescription = styled.div`
   width: 90%;
-  height: 60px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1c0101;
+  background: #34252f;
   padding: 10px 0px;
   span {
-    font-family: "Silkscreen", cursive;
+    font-family: "Roboto";
     font-size: 16px;
-    padding: 0px 10px;
+    padding: 0px 18px;
     font-weight: 400;
     color: white;
-    word-break: break-all;
+    word-break: break-word;
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -81,7 +83,7 @@ const PostContent = styled.img`
 const BottomPost = styled.div`
   width: 90%;
   height: 40px;
-  background: #1c0101;
+  background: #34252f;
   border-radius: 0px 0px 10px 10px;
   display: flex;
   align-items: center;

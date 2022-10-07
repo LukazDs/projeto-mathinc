@@ -6,8 +6,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: #fff2f2;
   position: relative;
+  margin-top: 90px;
 `;
 
 const PostsContainer = styled.div`
@@ -17,7 +17,7 @@ const PostsContainer = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 90px;
+  margin-top: 40px;
 `;
 
 export { Container, PostsContainer };

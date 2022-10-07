@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
+import CreatePost from "../createPost/CreatePost";
 import Hearder from "../header/Header";
 import Post from "../post/Post";
 import { Container, PostsContainer } from "./timelineStyle";
@@ -68,6 +69,7 @@ function Timeline() {
   return (
     <Container>
       <Hearder />
+      <CreatePost />
       <PostsContainer>{makePosts()}</PostsContainer>
     </Container>
   );

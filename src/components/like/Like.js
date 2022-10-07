@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import UserContext from "../../contexts/UserContext";
 
-function Like({ userId, postId, isLiked }) {
+function Like({ postId, isLiked }) {
   const [clicked, setClicked] = useState(isLiked);
-  console.log(isLiked);
+
   const { token } = useContext(UserContext);
   const id = localStorage.getItem("id");
 
@@ -31,6 +31,8 @@ function Like({ userId, postId, isLiked }) {
   function makeLike() {
     return clicked ? (
       <AiFillHeart
+        cursor={"pointer"}
+        filter={"brightness(1.75)"}
         onClick={() => {
           setClicked(!clicked);
           realizeDeslike();
@@ -38,6 +40,8 @@ function Like({ userId, postId, isLiked }) {
       />
     ) : (
       <AiOutlineHeart
+        cursor={"pointer"}
+        filter={"brightness(1.75)"}
         onClick={() => {
           setClicked(!clicked);
           realizeLike();

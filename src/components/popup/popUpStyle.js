@@ -9,7 +9,7 @@ export const PopUpMenuBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #171717;
+  background: #34252f;
   border-radius: 0px 0px 0px 20px;
 
   span {
