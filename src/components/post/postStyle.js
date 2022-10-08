@@ -82,19 +82,31 @@ const PostContent = styled.img`
 
 const BottomPost = styled.div`
   width: 90%;
-  height: 40px;
+  height: 54px;
   background: #34252f;
   border-radius: 0px 0px 10px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  svg {
-    margin: 0px 18px;
-    text-align: center;
-    font-size: 28px;
-    color: red;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    svg {
+      margin: 0px 18px;
+      text-align: center;
+      font-size: 28px;
+      color: red;
+    }
+    span {
+      font-family: "Roboto";
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
   }
+
   @media (max-width: 768px) {
     width: 100%;
   }

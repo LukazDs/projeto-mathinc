@@ -12,9 +12,7 @@ function CreatePost({ userId }) {
   const tokenDefault = token ? token : localStorage.getItem("token");
   const config = { headers: { Authorization: `${tokenDefault}` } };
 
-  function insertPost(event) {
-    event.preventDefault();
-
+  function insertPost() {
     const body = { imageUrl, title, userId };
 
     const promise = axios.post(
