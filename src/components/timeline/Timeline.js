@@ -69,7 +69,7 @@ function Timeline() {
   return (
     <Container>
       <Hearder />
-      <CreatePost />
+      <CreatePost userId={id} />
       <PostsContainer>{makePosts()}</PostsContainer>
     </Container>
   );
