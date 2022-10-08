@@ -5,6 +5,7 @@ import UserContext from "../../contexts/UserContext";
 import CreatePost from "../createPost/CreatePost";
 import Hearder from "../header/Header";
 import Post from "../post/Post";
+import Menu from "../menu/Menu";
 import { Container, PostsContainer } from "./timelineStyle";
 
 function Timeline() {
@@ -71,6 +72,7 @@ function Timeline() {
       <Hearder />
       <CreatePost userId={id} />
       <PostsContainer>{makePosts()}</PostsContainer>
+      <Menu />
     </Container>
   );
 }
