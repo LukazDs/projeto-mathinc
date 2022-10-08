@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import UserContext from "../../contexts/UserContext";
 
 function Like({ postId, isLiked }) {
   const [clicked, setClicked] = useState(isLiked);
+  const [amountLikes, setAmountLikes] = useState(0);
 
   const { token } = useContext(UserContext);
   const id = localStorage.getItem("id");
@@ -28,6 +29,16 @@ function Like({ postId, isLiked }) {
     );
   }
 
+  useEffect(() => {
+    const promise = axios.get(
+      `${process.env.REACT_APP_API_BASE_URL}/likes/post/${postId}/amount`
+    );
+
+    promise.then((res) => {
+      setAmountLikes(res.data.amount);
+    });
+  }, []);
+
   function makeLike() {
     return clicked ? (
       <AiFillHeart
@@ -36,6 +47,7 @@ function Like({ postId, isLiked }) {
         onClick={() => {
           setClicked(!clicked);
           realizeDeslike();
+          setAmountLikes(amountLikes - 1);
         }}
       />
     ) : (
@@ -45,12 +57,18 @@ function Like({ postId, isLiked }) {
         onClick={() => {
           setClicked(!clicked);
           realizeLike();
+          setAmountLikes(amountLikes + 1);
         }}
       />
     );
   }
 
-  return makeLike();
+  return (
+    <div>
+      <span>{amountLikes} Likes</span>
+      {makeLike()}
+    </div>
+  );
 }
 
 export { Like };

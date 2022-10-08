@@ -96,12 +96,12 @@ const BottomPost = styled.div`
     svg {
       margin: 0px 18px;
       text-align: center;
-      font-size: 28px;
+      font-size: 24px;
       color: red;
     }
     span {
       font-family: "Roboto";
-      font-size: 14px;
+      font-size: 10px;
       font-weight: 600;
       color: white;
     }

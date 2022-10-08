@@ -40,7 +40,6 @@ function Post({ title, imageUrl, userId, postId, isLiked }) {
       <PostContent src={imageUrl} alt="post"></PostContent>
       <BottomPost>
         <div>
-          <span>1 Likes</span>
           <Like userId={userId} postId={postId} isLiked={isLiked} />
         </div>
       </BottomPost>
