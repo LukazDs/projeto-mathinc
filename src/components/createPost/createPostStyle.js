@@ -51,7 +51,7 @@ const Form = styled.form`
     height: 26px;
     border: 1px solid #000000;
     border-radius: 16px;
-    background: #c2c2c2;
+    background: #00bfff;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
