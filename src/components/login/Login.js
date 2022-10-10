@@ -21,6 +21,8 @@ function Login() {
     setIsLoading(true);
 
     const URL = `${process.env.REACT_APP_API_BASE_URL}/user/login`;
+    console.log(URL)
+    
     const body = { email, password };
 
     const promise = axios.post(URL, body, {});
