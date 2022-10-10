@@ -52,6 +52,7 @@ function Register() {
       </registerStyle.InfoLogo>
       <registerStyle.Forms onSubmit={registerUser}>
         <input
+          id="name"
           type="name"
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -60,6 +61,7 @@ function Register() {
           required
         />
         <input
+          id="email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
@@ -68,6 +70,7 @@ function Register() {
           required
         />
         <input
+          id="imageUrl"
           type="url"
           onChange={(e) => setImageUrl(e.target.value)}
           value={imageUrl}
@@ -76,6 +79,7 @@ function Register() {
           required
         />
         <input
+          id="password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
@@ -84,6 +88,7 @@ function Register() {
           required
         />
         <input
+          id="confirmedPassword"
           type="password"
           onChange={(e) => setConfirmedPassword(e.target.value)}
           value={confirmedPassword}
@@ -91,7 +96,7 @@ function Register() {
           disabled={isLoading}
           required
         />
-        <button disabled={isLoading}>
+        <button id="register" disabled={isLoading}>
           {isLoading ? <Loading /> : "Register"}
         </button>
       </registerStyle.Forms>
