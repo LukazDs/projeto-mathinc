@@ -1,14 +1,10 @@
-import { Container, Logo } from "./styleChallenge";
-import logo_challenge from "../../assets/images/logo_challenge.jpeg";
-import { useNavigate } from "react-router-dom";
-
+import { Container } from "./styleChallenge";
+import InDevelopment from "../indevelopment/InDevelopment";
 function Challenge() {
-  const navigate = useNavigate();
+
   return (
     <Container>
-      <span>Sorry page under development!</span>
-      <Logo src={logo_challenge} />
-      <button onClick={() => navigate("/posts")}>Voltar</button>
+      <InDevelopment />
     </Container>
   );
 }
