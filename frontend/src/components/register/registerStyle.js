@@ -9,43 +9,28 @@ const InfoLogo = styled.div`
   align-items: center;
 
   .logo {
-    width: 102px;
-    height: 88px;
+    width: 72px;
+    height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     background: #ffffff;
     border: 1px solid #e3dddd;
-    border-radius: 28px;
+    border-radius: 18px;
     margin-right: 10px;
 
     span {
       font-family: "Bungee";
       font-style: normal;
       font-weight: 400;
-      font-size: 56px;
+      font-size: 46px;
       line-height: 34px;
 
       color: #000000;
 
       backdrop-filter: blur(2px);
     }
-  }
-
-  span {
-    text-align: center;
-
-    font-family: "Bungee";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 17px;
-    word-break: break-all;
-
-    color: #000000;
-
-    text-shadow: 0px 2px 2px;
   }
 `;
 
