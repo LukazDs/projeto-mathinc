@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const CreatePostBox = styled.div`
   width: 40%;
-  height: 120px;
+  height: 190px;
   background: white;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border: 2px;
   border-radius: 25px;
   position: relative;
@@ -27,17 +27,17 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   input {
     width: 312px;
-    height: 25px;
+    height: 38px;
     background: rgba(217, 217, 217, 0.5);
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     border-radius: 16px;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 28px;
     padding-left: 6%;
     color: black;

@@ -69,6 +69,7 @@ const Forms = styled.form`
     font-size: 20px;
     line-height: 28px;
     color: black;
+    padding: 0px 10px;
   }
   button {
     margin-top: 20px;

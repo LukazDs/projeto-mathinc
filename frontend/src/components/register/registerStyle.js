@@ -53,6 +53,7 @@ const Forms = styled.form`
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
+    padding: 0px 10px;
     color: black;
   }
   button {
