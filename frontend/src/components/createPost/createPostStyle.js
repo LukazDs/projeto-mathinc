@@ -47,16 +47,18 @@ const Form = styled.form`
     }
   }
   button {
-    width: 280px;
-    height: 26px;
-    border: 1px solid #000000;
+    width: 180px;
+    height: 32px;
+    border: 2px solid #4B0082;
     border-radius: 16px;
-    background: #00bfff;
+    background: rgb(138,43,226);
     font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 28px;
+    color: white;
+    cursor: pointer;
 
     @media (max-width: 768px) {
       width: 180px;
