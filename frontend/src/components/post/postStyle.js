@@ -19,7 +19,7 @@ const PostBox = styled.div`
 
 const TopPost = styled.div`
   width: 100%;
-  height: 54px;
+  height: 74px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +53,6 @@ const PostDescription = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 10px 0px;
   span {
@@ -66,9 +65,6 @@ const PostDescription = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    span {
-      text-align: center;
-    }
   }
 `;
 const PostContent = styled.img`

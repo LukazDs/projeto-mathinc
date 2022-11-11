@@ -24,7 +24,7 @@ const InfoLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
     background: #ffffff;
     border: 1px solid #e3dddd;
     border-radius: 28px;
