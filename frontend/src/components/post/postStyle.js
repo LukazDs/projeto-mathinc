@@ -7,22 +7,23 @@ const PostBox = styled.div`
   align-items: center;
   z-index: 0;
   width: 44%;
-  height: 620px;
-  margin-bottom: 10px;
-  border-radius: 10px 10px 0px 0px;
+  height: 100%;
+  margin-bottom: 40px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 5px rgba(27, 27, 27, 255);
+  background: #050514;
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 
 const TopPost = styled.div`
-  width: 90%;
+  width: 100%;
   height: 54px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px 10px 0px 0px;
-  background: #34252f;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -41,23 +42,22 @@ const ProfileTopPost = styled.div`
     margin: 0px 10px;
   }
   span {
-    font-family: "Silkscreen", cursive;
-    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
     font-weight: 500;
     color: white;
   }
 `;
 
 const PostDescription = styled.div`
-  width: 90%;
+  width: 100%;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #34252f;
   padding: 10px 0px;
   span {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     padding: 0px 18px;
     font-weight: 400;
@@ -72,18 +72,16 @@ const PostDescription = styled.div`
   }
 `;
 const PostContent = styled.img`
-  width: 90%;
-  height: 400px;
-  background: #ffffff;
+  width: 100%;
+  height: 450px;
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 
 const BottomPost = styled.div`
-  width: 90%;
+  width: 100%;
   height: 54px;
-  background: #34252f;
   border-radius: 0px 0px 10px 10px;
   display: flex;
   align-items: center;

@@ -4,7 +4,7 @@ const InDevelopmentBox = styled.div`
     width: 100%;
     height: 100vh;
     background: white;
-    display: flex;
+    display: ${(props) => (props.development ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: center;
     align-items: center;

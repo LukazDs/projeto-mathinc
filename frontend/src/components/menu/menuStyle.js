@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MenuBox = styled.div`
   width: 100%;
   height: 64px;
-  background: #34296f;
+  background: linear-gradient(#1a0033, #330066);
   border-radius: 48px 48px 0px 0px;
   display: flex;
   justify-content: center;

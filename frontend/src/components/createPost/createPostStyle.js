@@ -9,10 +9,11 @@ const CreatePostBox = styled.div`
   justify-content: space-evenly;
   border: 2px;
   border-radius: 25px;
+  box-shadow: 5px 5px 5px black;
   position: relative;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%;
   }
 `;
 
@@ -43,15 +44,15 @@ const Form = styled.form`
     color: black;
 
     @media (max-width: 768px) {
-      width: 212px;
+      width: 192px;
     }
   }
   button {
     width: 180px;
     height: 32px;
-    border: 2px solid #4B0082;
+    border: 2px solid #4b0082;
     border-radius: 16px;
-    background: rgb(138,43,226);
+    background: rgb(138, 43, 226);
     font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
@@ -61,7 +62,7 @@ const Form = styled.form`
     cursor: pointer;
 
     @media (max-width: 768px) {
-      width: 180px;
+      width: 174px;
     }
   }
 `;

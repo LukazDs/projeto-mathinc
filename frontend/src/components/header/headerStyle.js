@@ -7,7 +7,7 @@ const HeaderBox = styled.menu`
   align-items: center;
   justify-content: space-between;
   border-radius: 0px 0px 0px 24px;
-  background: #34296f;
+  background: linear-gradient(#1a0033, #330066);
   position: fixed;
   z-index: 1;
   top: 0;
