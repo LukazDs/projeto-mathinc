@@ -18,14 +18,28 @@ function Challenge({ title, questions }) {
 }
 
 function makeForms(questions) {
+  function handleBackClick() {
+    //challengeRef.current.scrollIntoView(true);
+    window.scrollBy(0, 500);
+  }
+  function confirmResponse(event) {
+    event.preventDefault();
+  }
+
   return questions.map((v, i) => {
     return (
-      <Forms key={i}>
+      <Forms onSubmit={confirmResponse} key={i}>
         <ChalengeTitle>
           <span>{v.title}</span>
         </ChalengeTitle>
         <Questions alternatives={v.alternatives}></Questions>
-        <button>Confirmar</button>
+        <button
+          onClick={() => {
+            handleBackClick();
+          }}
+        >
+          Confirmar
+        </button>
       </Forms>
     );
   });

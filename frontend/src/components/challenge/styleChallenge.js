@@ -5,7 +5,8 @@ const ChalengeBox = styled.div`
   display: ${(props) => (props.challenge ? "flex" : "none")};
   flex-direction: column;
   background: green;
-  height: 64%;
+  margin-bottom: 56px;
+  height: 74%;
   width: 84%;
   align-items: center;
   border-radius: 24px;
@@ -22,18 +23,18 @@ const ChalengeTitle = styled.div`
   color: white;
   p {
     padding: 22px 62px;
+    font-weight: 600;
   }
 
   span {
-    font-weight: 600;
-    padding: 24px;
-    font-size: 19px;
+    font-weight: 500;
+    font-size: 20px;
   }
 `;
 
 const Forms = styled.form`
   width: 90%;
-  height: 200px;
+  height: 338px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

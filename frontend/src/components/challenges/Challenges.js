@@ -1,6 +1,6 @@
 import Menu from "../menu/Menu";
 import Hearder from "../header/Header";
-import { ChallengesBox } from "./styleChallenge";
+import { ChallengesBox } from "./styleChallenges";
 import Challenge from "../challenge/Challenge";
 import { useEffect } from "react";
 import axios from "axios";
