@@ -68,4 +68,4 @@ const Forms = styled.form`
   }
 `;
 
-export { Container, ChalengeBox, Forms, ChalengeTitle };
+export { ChalengeBox, Forms, ChalengeTitle };

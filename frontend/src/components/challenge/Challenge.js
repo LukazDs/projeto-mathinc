@@ -1,41 +1,34 @@
-import { Container, ChalengeBox, Forms, ChalengeTitle } from "./styleChallenge";
+import { ChalengeBox, Forms, ChalengeTitle } from "./styleChallenge";
 import InDevelopment from "../indevelopment/InDevelopment";
-import Menu from "../menu/Menu";
-import Hearder from "../header/Header";
+import Questions from "../questions/Questions";
 
-function Challenge() {
+function Challenge({ title, questions }) {
   return (
-    <Container>
-      <Hearder />
+    <>
       <ChalengeBox challenge={true}>
         <ChalengeTitle>
-          <p>Desafio de Álgebra</p>
-          <span>Titulo do desafio</span>
+          <p>Desafio de {title}</p>
         </ChalengeTitle>
-        <Forms>
-          <div>
-            <div>
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">HTML</label>
-            </div>
-            <br />
-            <div>
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">HTML</label>
-            </div>
-            <br />
-            <div>
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">HTML</label>
-            </div>
-          </div>
-          <button>Confirmar</button>
-        </Forms>
+
+        {makeForms(questions)}
       </ChalengeBox>
       <InDevelopment development={false} />
-      <Menu />
-    </Container>
+    </>
   );
+}
+
+function makeForms(questions) {
+  return questions.map((v, i) => {
+    return (
+      <Forms key={i}>
+        <ChalengeTitle>
+          <span>{v.title}</span>
+        </ChalengeTitle>
+        <Questions alternatives={v.alternatives}></Questions>
+        <button>Confirmar</button>
+      </Forms>
+    );
+  });
 }
 
 export default Challenge;
