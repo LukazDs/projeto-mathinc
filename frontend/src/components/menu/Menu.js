@@ -6,7 +6,7 @@ function Menu() {
 
   return (
     <MenuBox>
-      <InfoLogo onClick={() => navigate("/challenge")}>
+      <InfoLogo onClick={() => navigate("/challenges")}>
         <div className="logo">
           <span>M</span>
         </div>

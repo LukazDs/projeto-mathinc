@@ -5,6 +5,7 @@ import Register from "./components/register/Register";
 import UserContext from "./contexts/UserContext";
 import Timeline from "./components/timeline/Timeline";
 import Challenge from "./components/challenge/Challenge";
+import Challenges from "./components/challenges/Challenges";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -21,7 +22,7 @@ export default function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/posts" element={<Timeline />} />
-          <Route path="/challenge" element={<Challenge />} />
+          <Route path="/challenges" element={<Challenges />} />
         </Routes>
       </Router>
     </UserContext.Provider>
