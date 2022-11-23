@@ -1,13 +1,24 @@
+import { useState } from "react";
 import Question from "../question/Question";
 import { QuestionsBox } from "./styleQuestions";
 
-function Questions({ alternatives }) {
-  return <QuestionsBox>{makeQuestions(alternatives)}</QuestionsBox>;
+function Questions({ alternatives, hits, setHits }) {
+  return (
+    <QuestionsBox>{makeQuestions(alternatives, hits, setHits)}</QuestionsBox>
+  );
 }
 
-function makeQuestions(alternatives) {
+function makeQuestions(alternatives, hits, setHits) {
   return alternatives.map((v, i) => {
-    return <Question key={i} title={v.title} />;
+    return (
+      <Question
+        hits={hits}
+        status={v.status}
+        setHits={setHits}
+        key={i}
+        title={v.title}
+      />
+    );
   });
 }
 

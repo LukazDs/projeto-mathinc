@@ -1,8 +1,10 @@
 import { ChalengeBox, Forms, ChalengeTitle } from "./styleChallenge";
 import InDevelopment from "../indevelopment/InDevelopment";
 import Questions from "../questions/Questions";
+import { useState } from "react";
 
 function Challenge({ title, questions }) {
+  const [hits, setHits] = useState(false);
   return (
     <>
       <ChalengeBox challenge={true}>
@@ -10,14 +12,14 @@ function Challenge({ title, questions }) {
           <p>Desafio de {title}</p>
         </ChalengeTitle>
 
-        {makeForms(questions)}
+        {makeForms(questions, hits, setHits)}
       </ChalengeBox>
       <InDevelopment development={false} />
     </>
   );
 }
 
-function makeForms(questions) {
+function makeForms(questions, hits, setHits) {
   function handleBackClick() {
     //challengeRef.current.scrollIntoView(true);
     window.scrollBy(0, 500);
@@ -32,10 +34,15 @@ function makeForms(questions) {
         <ChalengeTitle>
           <span>{v.title}</span>
         </ChalengeTitle>
-        <Questions alternatives={v.alternatives}></Questions>
+        <Questions
+          hits={hits}
+          setHits={setHits}
+          alternatives={v.alternatives}
+        ></Questions>
         <button
           onClick={() => {
             handleBackClick();
+            console.log(hits);
           }}
         >
           Confirmar
