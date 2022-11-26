@@ -4,7 +4,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import UserContext from "./contexts/UserContext";
 import Timeline from "./components/timeline/Timeline";
-import Challenge from "./components/challenge/Challenge";
+
 import Challenges from "./components/challenges/Challenges";
 
 export default function App() {

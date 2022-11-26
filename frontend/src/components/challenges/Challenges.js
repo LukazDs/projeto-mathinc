@@ -1,7 +1,7 @@
 import Menu from "../menu/Menu";
 import Hearder from "../header/Header";
 import { ChallengesBox } from "./styleChallenges";
-import Challenge from "../challenge/Challenge";
+import Question from "../question/Question";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
@@ -19,15 +19,25 @@ function Challenges() {
   return (
     <ChallengesBox>
       <Hearder />
-      {makeChallenges(challenges)}
+      <Questions challenges={challenges} />
       <Menu />
     </ChallengesBox>
   );
 }
 
-function makeChallenges(challenges) {
+function Questions({ challenges }) {
+  const [points, setPoints] = useState(0);
+
   return challenges.map((v, i) => {
-    return <Challenge title={v.name} questions={v.challenges} key={i} />;
+    return (
+      <Question
+        title={v.name}
+        points={points}
+        setPoints={setPoints}
+        questions={v.challenges}
+        key={i}
+      />
+    );
   });
 }
 
