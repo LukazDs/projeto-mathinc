@@ -3,11 +3,12 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as headerStyle from "./headerStyle";
 import { PopUpHeader } from "../popup/PopUp";
 import UserContext from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function Hearder() {
   const [clicked, setClicked] = useState(false);
-
   const { imageProfile } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const imageDefault = localStorage.getItem("profileUrl")
     ? localStorage.getItem("profileUrl")
@@ -33,6 +34,7 @@ function Hearder() {
       <span
         onClick={() => {
           setClicked(!clicked);
+          navigate("/posts");
         }}
       >
         MathInc
