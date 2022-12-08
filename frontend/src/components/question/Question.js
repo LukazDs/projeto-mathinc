@@ -4,23 +4,27 @@ import {
   FormBox,
   ChalengeTitle,
   AlternativesBox,
-  Point,
 } from "./styleQuestion";
 import Alternative from "../alternative/Alternative";
 
-function Question({ title, questions, points, setPoints }) {
+function Question({ title, questions, points, setPoints, clicks, setClicks }) {
   return (
     <QuestionBox>
       <ChalengeTitle>
         <p>Desafio de {title}</p>
       </ChalengeTitle>
-      <Form questions={questions} points={points} setPoints={setPoints} />
-      <Point>{points}</Point>
+      <Form
+        questions={questions}
+        points={points}
+        clicks={clicks}
+        setClicks={setClicks}
+        setPoints={setPoints}
+      />
     </QuestionBox>
   );
 }
 
-function Form({ questions, points, setPoints }) {
+function Form({ questions, points, setPoints, clicks, setClicks }) {
   const [isCorrect, setIsCorrect] = useState(false);
   const [finished, setFinished] = useState(false);
 
@@ -30,7 +34,7 @@ function Form({ questions, points, setPoints }) {
     setFinished(true);
 
     if (isCorrect) {
-      setPoints(points + 10);
+      setPoints(points + 1);
     }
   }
 
@@ -61,7 +65,9 @@ function Form({ questions, points, setPoints }) {
             finished={finished}
           />
         </AlternativesBox>
-        <button disabled={finished}>Confirmar</button>
+        <button onClick={() => setClicks(clicks + 1)} disabled={finished}>
+          Confirmar
+        </button>
       </FormBox>
     );
   });
